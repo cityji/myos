@@ -1,0 +1,256 @@
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyOS calc</title>
+  <link rel="icon" href="/assets/calc.svg">
+
+  <style>
+@media only screen and (min-device-width : 360px) and (max-device-width : 740px) {
+  body {
+scale: 85%;
+
+  }
+}
+
+
+    body {
+      background-color: #f7c0db3d;
+    }
+
+    .cal-fn_btn {
+      background-color: #df974c;
+      height: 100px;
+      width: 100px;
+      padding: 12%;
+      transition: .71s;
+      font-size: sans-serif;
+      font-size: 24pt !important;
+      font-weight: bolder !important;
+      margin-left: 2px !important;
+      color: white;
+
+    }
+
+    .cal-fn_btn:hover {
+      background-color: #dfb07e;
+      height: 100px;
+      width: 100px;
+      padding: 12%;
+      transition: .71s;
+      font-size: sans-serif;
+      font-size: 22pt;
+      font-weight: bolder;
+    }
+
+    .cal-fn_btn:active {
+      background-color: darkcyan;
+      height: 100px;
+      width: 100px;
+      padding: 12%;
+      transition: 0.17s;
+      font-size: sans-serif;
+      font-size: 22pt;
+      font-weight: bolder;
+    }
+
+    #table tr,
+    td,
+    input {
+      margin: 0% !important;
+      padding: 0% !important;
+      border-radius: 0px !important;
+      border: none !important;
+
+    }
+
+    #table {
+      padding: 0% !important;
+      margin: auto !important;
+      border-radius: 0% !important;
+      background: #000000;
+      background-image: none !important;
+    }
+
+    /*Calculator*/
+
+    /* calc properties */
+    .cal_btn {
+      height: 100px;
+      width: 100px;
+      padding: 12%;
+      background: d8d9db;
+      transition: .71s;
+      border-radius: 20%;
+      font-size: sans-serif;
+      font-size: 22pt;
+      font-weight: bolder;
+    }
+
+    .cal_btn:hover {
+      height: 100px;
+      width: 100px;
+      padding: 12%;
+      transition: .011s;
+      background: #ebebeb;
+      border: 2px aquamarine solid;
+      border-radius: 20%;
+      font-size: sans-serif;
+      font-size: 21.7pt;
+    }
+
+    .cal_btn:active {
+      height: 100px;
+      width: 100px;
+      padding: 12%;
+      transition: .01s;
+      background: #bbbcbe;
+      border: 2px aquamarine solid;
+      border-radius: 20%;
+      font-size: sans-serif;
+      font-size: 21.7pt;
+    }
+
+    #table {
+      border: white 2px solid;
+      background-image: linear-gradient(to left, #ffb6c15e, #00ffff36);
+      padding: 10px 5px;
+      border-bottom-right-radius: 5%;
+      border-bottom-left-radius: 5%;
+    }
+
+    #center {
+      height: fit-content;
+      width: fit-content;
+      margin: auto;
+    }
+
+    .decor {
+      width: fit-content;
+      margin: auto;
+      text-align: center;
+      vertical-align: middle;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      font-size: 18pt;
+      font-weight: bold;
+      background-image: repeating-linear-gradient(40deg, #ffb6c1dc, transparent, lightcyan);
+      border: 1px cyan solid;
+      padding: 2%;
+      border-radius: 10px;
+    }
+
+    .decor:hover {
+      transition: 0.04s;
+      width: fit-content;
+      margin: auto;
+      text-align: center;
+      vertical-align: middle;
+      font-family: 'Segoe UI', Roboto, sans-serif;
+      font-size: 18pt;
+      font-weight: bold;
+      background-image: repeating-linear-gradient(40deg, lightcyan, transparent, transparent, #ffb6c1dc);
+      border: 2px cyan solid;
+      padding: 2%;
+      border-radius: 10px;
+    }
+    code{
+      font-weight: bold;
+      background:darkcyan;
+      color: white;
+      padding: 10px;
+      border: wheat 1px solid;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <center>
+    <h1>
+      MyOs Calculator
+    </h1>
+    <marquee behavior="alteranate" direction="alteranate">
+      <code>Inspired from mars</code>
+      <span>This thing is a Calculator made for your personal/professional use ..  it is free of cost .... i made if just for you ...  </span>
+    </marquee>
+  </center>
+
+  <div class="br"></div>
+  <div id="center">
+    <table width="200" id="table" cellpadding="">
+      <td colspan="4">
+        <input type="text"
+          style="width:100%; height:100px; background:black; color: white; font-size: 50pt; font-weight: bolder; box-shadow:0px 11px 25px -8px #fff"
+          id="in" />
+      </td>
+      </tr>
+      <tr>
+        <td></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="1" onclick="abc(this.value)" class="cal_btn" /></td>
+        <td><input type="button" value="2" onclick="abc(this.value)" class="cal_btn" /></td>
+        <td><input type="button" value="3" onclick="abc(this.value)" class="cal_btn" /></td>
+        <td><input type="button" value="+" onclick="abc(this.value)" class="cal-fn_btn" /></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="4" onclick="abc(this.value)" class="cal_btn" /></td>
+        <td><input type="button" value="5" onclick="abc(this.value)" class="cal_btn" /></td>
+        <td><input type="button" value="6" onclick="abc(this.value)" class="cal_btn" /></td>
+        <td><input type="button" value="-" onclick="abc(this.value)" class="cal-fn_btn" /></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="7" onclick="abc(this.value)" class="cal_btn" /></td>
+        <td><input type="button" value="8" onclick="abc(this.value)" class="cal_btn" /></td>
+        <td><input type="button" value="9" onclick="abc(this.value)" class="cal_btn" /></td>
+        <td><input type="button" value="/" onclick="abc(this.value)" class="cal-fn_btn" /></td>
+      </tr>
+      <tr>
+        <td><input type="button" value="0" onclick="abc(this.value)" class="cal_btn" /></td>
+        <td><input type="button" value="=" onclick="abc(this.value)" class="cal_btn" /></td>
+        <td>
+          <input type="button" value="C" onclick="document.getElementById('in').value=''" class="cal_btn">
+        </td>
+        <td><input type="button" value="x" onclick="abc(this.value)" class="cal-fn_btn" /></td>
+      </tr>
+    </table>
+  </div>
+  <br><br><br><br><br>
+  <script>
+    var first, sec, operator;
+    var empty = null;
+
+    function abc(a) {
+
+      if (a == "+" || a == "-" || a == "x" || a == "/") {
+        first = document.getElementById("in").value;
+        operator = a;
+        document.getElementById("in").value = "";
+      }
+      else {
+        if (a == "=") {
+          sec = document.getElementById("in").value;
+          if (operator == "+")
+            document.getElementById("in").value = parseInt(first) + parseInt(sec);
+          else if (operator == "-")
+            document.getElementById("in").value = parseInt(first) - parseInt(sec);
+          else if (operator == "x")
+            document.getElementById("in").value = parseInt(first) * parseInt(sec);
+          else if (operator == "/") { document.getElementById("in").value = parseInt(first) / parseInt(sec); }
+        }
+        else {
+          document.getElementById("in").value = document.getElementById("in").value + a;
+        }
+      }
+    }
+    function clear() {
+      document.getElementById('in').value = '';
+    }
+  </script>
+</body>
+
+</html>
